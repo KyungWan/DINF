@@ -10,6 +10,8 @@
           counter
           show-size
           outlined
+          :rules="rules"
+          accept="music/mp3, music/wav, music/flac"
           label="Music File input"
           prepend-icon="mdi-music"
           truncate-length="50"

@@ -32,7 +32,6 @@
 
 <script>
 import Layout from '../components/Layout'
-import { mapGetters } from 'vuex'
 
 // @ is an alias to /src
 /* eslint-disable no-unused-vars */
@@ -46,9 +45,6 @@ export default {
     Success () {
       (window.location.pathname !== '/Music') ? router.push('/Music') : router.go(0)
     }
-  },
-  computed: {
-    ...mapGetters(['isAuthorized'])
   }
 }
 </script>

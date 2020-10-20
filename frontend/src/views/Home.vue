@@ -10,6 +10,7 @@
           counter
           show-size
           outlined
+          prepend-icon="mdi-music"
           truncate-length="50"
           placeholder="Please upload music files."
         >

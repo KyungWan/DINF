@@ -1,39 +1,48 @@
 <template>
-  <v-app id="inspire">
-    <v-app-bar
-      app
-      clipped-right
-      color="blue"
-      dark
-    >
-    <!-- 타이틀 -->
-      <v-toolbar-title><div @click="home">음악 선정 > 음악 분석 > 음악 추천</div></v-toolbar-title>
-      <v-spacer></v-spacer>
-      <slot name="menubar"></slot>
-    </v-app-bar>
+  <v-main>
+  <v-container>
+    <div id="check">
+      <div>
+          <button v-on:click="check">check</button>
+      </div>
+  </div>
 
-    <v-container>
-      <v-main id="content">
-        <slot name="content" class="font">
-        </slot>
-      </v-main>
-    </v-container>
-  </v-app>
+  <div id="app2">
+      <div>
+        <input v-model="searchS" type="text" />
+        <ul>
+            <li v-for="singer in filteredSs" v-bind:key="singer"> {{ singer }} </li>
+        </ul>
+      </div>
+    </div>
+  </v-container>
+  </v-main>
 </template>
 
 <script>
-import router from '../router'
-
 export default {
-  data: () => ({
-    drawer: false,
-    left: false
-  }),
+  e1: 'app1',
+  data1 () {
+    return { message: '안녕!' }
+  },
   methods: {
-  // (리스트) 홈으로 이동 등등...
-    home () {
-      (window.location.pathname !== '/') ? router.push('/') : router.go(0)
+    check: function () {
+      alert(this.message)
+    }
+  },
+  e2: 'app2',
+  data2: {
+    searchS: '',
+    Ss: ['가수1', '가수2', '그룹1', '그룹2', '기획사']
+  },
+  computed: {
+    filteredSs () {
+      return this.filteredSs(Ss => Ss.match(this.searchS.toUpperCase()))
     }
   }
 }
 </script>
+
+<style>
+
+</style>

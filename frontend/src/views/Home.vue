@@ -7,12 +7,12 @@
           <v-parallax src="@/assets/testing.jpg">
             <p v-scrollanimation>매일 똑같은 노래를 듣는 당신에게</p>
             <p v-scrollanimation>한번의 클릭만으로 자기 자신을 찾아보세요</p>
+              <div class="button">
+                <v-btn next to="/upload">시작하기</v-btn>
+              </div>
           </v-parallax>
-          <div class="button">
-            <v-btn next to="/upload">시작하기</v-btn>
-          </div>
         </v-container>
-        <v-parallax src="@/assets/3.jpg" height="750">
+        <v-parallax src="@/assets/night_sky.jpg" height="750">
           <v-row align="left" justify="left" text-align="left">
             <v-col class="text-center" cols="12">
               <h1>
@@ -26,7 +26,6 @@
         </v-parallax>
         <div id="info">
         </div>
-        <v-parallax src="@/assets/4.jpg" max-height="500px"></v-parallax>
       </template>
     </Layout>
   </v-main>

@@ -16,7 +16,7 @@
       </v-container>
 
       <div align="center">
-        <v-btn outlined color="gray"
+        <v-btn outlined next to="/analysis"
                style="padding: auto width: auto"
                @click="onUpload()"
                >
@@ -72,27 +72,5 @@ export default {
 </script>
 
 <style>
-.inputfile {
-width: 0.1px;
-height: 0.1px;
-opacity: 0;
-overflow: hidden;
-position: absolute;
-z-index: -1;
-}
-.inputfile + label {
-    font-size: 1.25em;
-    font-weight: 700;
-    color: white;
-    background-color: black;
-    display: inline-block;
-}
 
-.inputfile:focus + label,
-.inputfile + label:hover {
-    background-color: red;
-}
-.inputfile + label {
-  cursor: pointer; /* "hand" cursor */
-}
 </style>

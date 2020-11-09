@@ -7,6 +7,7 @@ import signUp from '../views/signUp.vue'
 import Logout from '../views/Logout.vue'
 import apply from '../views/apply.vue'
 import login from '../views/Login.vue'
+import analysis from '../views/analysis.vue'
 
 Vue.use(VueRouter)
 
@@ -40,6 +41,11 @@ const routes = [
     path: '/apply',
     name: 'apply',
     component: apply
+  },
+  {
+    path: '/analysis',
+    name: 'analysis',
+    component: analysis
   }
 ]
 

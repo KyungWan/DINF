@@ -1,9 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-// import axios from 'axios'
 
-import state from './states'
 import actions from './actions'
+import state from './states'
 import mutations from './mutations'
 import getters from './getters'
 
@@ -14,69 +13,64 @@ export default new Vuex.Store({
   actions,
   mutations,
   getters
-//  state: {
-//    count: 0,
-//    weight: 2,
-//    random: 0,
-//    todoItems: []
-//  },
+})
 //  mutations: {
-//    increment (state) {
-//      state.count++
+//    successUserInfo: function ({ commit }, msg) {
+//      console.log('msg : ' + msg)
+//      if (msg === 'ok') {
+//        router.push({ name: 'testPrevious' })
+//      } else {
+//        alert('이미 존재하는 ID입니다')
+//      }
 //    },
-//    decrement (state) {
-//      state.count--
+//    failUserInfo: function () {
+//      console.log('failUserInfo')
 //    },
-//    successGenRandNum (state, payload) {
-//      state.random = payload
-//    },
-//    failGenRandNum () {
-//      alert('망함')
-//    },
-//    ADD_TODO (state, todoItems) {
-//      state.todoItems.push(todoItems)
-//    },
-//    REMOVE_TODO (state, idx) {
-//      state.todoItems.splice(idx, 1)
-//    },
-//    CLEAR_ALL (state) {
-//      state.todoItems = []
-//    }
-//  },
-//  getters: {
-//    count (state, getters) {
-//      return Math.pow(state.count, getters.weight)
-//    },
-//    weight (state) {
-//      return state.weight
-//    },
-//    random (state) {
-//      return state.random
+//    successRegister: function ({ commit }, msg) {
+//      console.log('msg : ' + msg)
+//      if (msg === 'ok') {
+//        router.push({ name: 'success' })
+//      } else {
+//        alert('ID/ PW를 확인해주세요')
+//      }
 //    }
 //  },
 //  actions: {
-//    generateRandomNumber ({ commit }) {
-//      console.log(commit)
+//    signIn ({ commit }, login) {
+//      console.log('id : ' + login.id)
+//      console.log('pw : ' + login.pw)
 //
-//      axios.get('http://localhost:7777/random')
-//        .then((res) => {
-//          commit('successGenRandNum',
-//            parseInt(res.data.randNumber))
-//        })
-//        .catch((res) => {
-//          commit('failGenRandNum', res)
-//        })
+//      var header = {
+//        'Content-Type': 'application/json'
+//      }
+//
+//      axios.post('http://localhost:1234/signIn', login, header).then((res) => {
+//        if (res.status === 200) {
+//          console.log('login data:' + res.data)
+//          commit('successUserInfo', res.data)
+//        }
+//      }).catch((res) => {
+//        commit('failUserInfo')
+//      })
 //    },
-//    addTodo (context, payload) {
-//      context.commit('ADD_TODO', payload)
-//    },
-//    removeTodo (context, payload) {
-//      context.commit('REMOVE_TODO', payload)
-//    },
-//    clearAll (context, payload) {
-//      context.commit('CLEAR_ALL')
+//    signUp ({ commit }, member) {
+//      console.log('id: ' + member.id)
+//      console.log('pw: ' + member.pw)
+//      console.log('nickName: ' + member.nickName)
+//      console.log('email: ' + member.email)
+//
+//      var header = {
+//        'Content-Type': 'application/json'
+//      }
+//
+//      axios.post('http://localhost:1234/overlap', member, header).then((res) => {
+//        if (res.status === 200) {
+//          console.log('login data:' + res.data)
+//          commit('successRegister')
+//        }
+//      })
 //    }
 //  },
 //  modules: {
 //  }
-})
+//  })

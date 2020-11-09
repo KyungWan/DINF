@@ -1,28 +1,45 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Home from '../views/Home.vue'
-
-import analysis from '../views/analysis.vue'
-import recommendation from '../views/recommendation.vue'
+import home from '../views/home.vue'
+import upload from '../views/upload.vue'
+import signUp from '../views/signUp.vue'
+import Logout from '../views/Logout.vue'
+import apply from '../views/apply.vue'
+import login from '../views/Login.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'home',
+    component: home
   },
   {
-    path: '/analysis',
-    name: 'analysis',
-    component: analysis
+    path: '/upload',
+    name: 'upload',
+    component: upload
   },
   {
-    path: '/recommendation',
-    name: 'recommendation',
-    component: recommendation
+    path: '/login',
+    name: 'login',
+    component: login
+  },
+  {
+    path: '/signUp',
+    name: 'signUp',
+    component: signUp
+  },
+  {
+    path: '/Logout',
+    name: 'Logout',
+    component: Logout
+  },
+  {
+    path: '/apply',
+    name: 'apply',
+    component: apply
   }
 ]
 

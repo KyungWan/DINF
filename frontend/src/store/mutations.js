@@ -3,43 +3,23 @@ import {
   SET_MY_INFO,
   DESTROY_ACCESS_TOKEN,
   DESTROY_MY_INFO,
-  CRAWLSTART,
-  FINDONE,
-  FETCH_BOARD_LIST,
-  FETCH_BOARD
+  FETCH_ARCHIVE
 } from './mutation-types'
 
 import axios from 'axios'
 import cookies from 'vue-cookies'
 
 export default {
-  [FETCH_BOARD_LIST] (state, boards) {
-    state.boards = boards
-  },
-  [FETCH_BOARD] (state, board) {
-    state.board = board
-  },
-  [CRAWLSTART] (state, payload) {
-    console.log(payload)
-    state.lists = payload
-  },
-  [FINDONE] (state, payload) {
-    state.news = payload
-  },
-  increment (state) {
-    state.count++
-  },
-  decrement (state) {
-    state.count--
-  },
   [SET_ACCESS_TOKEN] (state, accessToken) {
+    // 토큰을 등록
     if (accessToken) {
       state.accessToken = accessToken
 
+      // AXIOS에 토큰을 등록해서 다음에 로그인할 때 만들어놓은 정보를 비교해서 처리.
       axios.defaults.headers.common.Authorization = `Bearer ${accessToken}`
       console.log('axios Auth: ' + axios.defaults.headers.common.Authorization)
 
-      cookies.set('accessToken', accessToken, '1h')
+      cookies.set('accessToken', accessToken, 'null')
     }
   },
   [SET_MY_INFO] (state, myinfo) {
@@ -54,5 +34,8 @@ export default {
   },
   [DESTROY_MY_INFO] (state) {
     state.myinfo = null
+  },
+  [FETCH_ARCHIVE] (state, archive) {
+    state.lists = archive
   }
 }

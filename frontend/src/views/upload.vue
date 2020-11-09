@@ -20,7 +20,7 @@
                style="padding: auto width: auto"
                @click="onUpload()"
                >
-          분석 결과 보기 
+          분석 결과 보기
         </v-btn>
       </div>
     </template>

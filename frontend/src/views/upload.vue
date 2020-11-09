@@ -16,9 +16,9 @@
       </v-container>
 
       <div align="center">
-        <v-btn outlined next to="/analysis"
+        <v-btn v-on:click="onUpload()"
+               outlined next to="/analysis"
                style="padding: auto width: auto"
-               @click="onUpload()"
                >
           분석 결과 보기
         </v-btn>
@@ -50,7 +50,7 @@ export default {
       const formData = new FormData()
       formData.append('file', this.file)
 
-      this.axios.post('http://localhost8080/api.php',
+      this.axios.post('http://127.0.0.1:5000/file_download',
         formData,
         {
           headers: {
